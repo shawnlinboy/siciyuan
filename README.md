@@ -2,7 +2,7 @@
 =========
 Sina Weibo Android App, require Android 4.1+, GPL v3 License
 
-Modified by [shawnlinboy](mobilelin.me) for compiling successfully by Android Studio 1.0.3 with gradle 2.2.1.
+Modified by [shawnlinboy](http://mobilelin.me/) for compiling successfully by Android Studio 1.0.3 with gradle 2.2.1.
 
 截图
 --------------
