@@ -794,7 +794,7 @@
     <string name="code21971">地理信息接口中心坐标超出范围</string>
     <!-- From: file:/home/linshen/siciyuan/res/values/com_crashlytics_export_strings.xml -->
     <eat-comment/>
-    <string name="com.crashlytics.android.build_id" translatable="false">4ff12cfd-c93e-41c3-93f3-8e305b0dbdf8</string>
+    <string name="com.crashlytics.android.build_id" translatable="false">362b1afa-d49e-4de2-915f-77707f5797ee</string>
     <!-- From: file:/home/linshen/siciyuan/res/values/strings.xml -->
     <eat-comment/>
     <string name="comment_at_to_you">在评论中提到了你</string>
