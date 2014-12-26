@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/home/linshen/siciyuan/res/values-land/slidingmenu_dimens.xml -->
+    <eat-comment/>
+    <dimen name="slidingmenu_offset">360dp</dimen>
+</resources>

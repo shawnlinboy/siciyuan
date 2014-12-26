@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="0dp"/>
+    <solid android:color="@color/transparent"/>
+    <padding
+        android:left="14dp"
+        android:top="14dp"
+        android:right="14dp"
+        android:bottom="14dp"/>
+
+
+</shape>
+<!-- From: file:/home/linshen/siciyuan/res/drawable/listview_item_background_normal_light_simple.xml -->

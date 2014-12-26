@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="#7b7b7b" android:state_selected="true"/>
+    <item android:color="#7b7b7b"/>
+</selector>
+<!-- From: file:/home/linshen/siciyuan/res/color/timeline_item_text_color_dark.xml -->

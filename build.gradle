@@ -1,0 +1,143 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url 'http://download.crashlytics.com/maven' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.0'
+        classpath 'com.crashlytics.tools.gradle:crashlytics-gradle:1.+'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url 'http://download.crashlytics.com/maven' }
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'crashlytics'
+
+android {
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    buildToolsVersion "21.1.1"
+    compileSdkVersion 21
+
+    defaultConfig {
+        applicationId "org.qii.weiciyuan"
+        minSdkVersion 17
+        targetSdkVersion 21
+        versionCode 1
+        versionName '0.1_alpha_linshen'
+    }
+
+    sourceSets {
+        main {
+            manifest {
+                srcFile 'AndroidManifest.xml'
+            }
+            java {
+                srcDir 'src'
+            }
+            res {
+                srcDir 'res'
+            }
+            assets {
+                srcDir 'assets'
+            }
+            resources {
+                srcDir 'src'
+            }
+            jniLibs {
+                srcDir 'libs'
+            }
+            aidl {
+                srcDir 'src/com/sina/sso'
+            }
+
+        }
+
+        debug {
+            res {
+                srcDir 'debug/res'
+            }
+        }
+
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("debug.keystore")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+
+        release {
+            if (System.getenv("KEYSTORE") != null) {
+                storeFile file(System.getenv("KEYSTORE"))
+                storePassword System.getenv("KEYSTORE_PASSWORD")
+                keyAlias System.getenv("KEY_ALIAS")
+                keyPassword System.getenv("KEY_PASSWORD")
+            }
+        }
+    }
+
+    /*
+     * android:targetPackage cant use ${applicationId}, so define a string source called "applicationId"
+     * Preference intent android:data dont support ${applicationId}
+     */
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+            resValue "string", "applicationId", "org.qii.weiciyuan" + getApplicationIdSuffix()
+            resValue "string", "weiciyuanOfficalWeiboName",
+                    "org.qii.weiciyuan" + getApplicationIdSuffix() + ".mention://@四次元App"
+            debuggable true
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+        }
+        release {
+            resValue "string", "applicationId", "org.qii.weiciyuan"
+            resValue "string", "weiciyuanOfficalWeiboName",
+                    "org.qii.weiciyuan" + ".mention://@四次元App"
+            debuggable false
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+
+    }
+
+
+    dexOptions {
+        preDexLibraries = false
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:support-v4:21.0.0'
+    compile 'com.crashlytics.android:crashlytics:1.1.11'
+    compile(project(':libs:slidingmenulibrary')) {
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
+    compile(project(':libs:showcaseviewlibrary')) {
+        exclude group: 'com.google.android', module: 'support-v4'
+
+    }
+}
+
+

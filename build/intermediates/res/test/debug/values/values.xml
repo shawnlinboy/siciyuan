@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/home/linshen/siciyuan/build/generated/res/generated/test/debug/values/generated.xml -->
+    <eat-comment/>
+    <item name="applicationId" type="string">org.qii.weiciyuan.debug</item>
+    <item name="weiciyuanOfficalWeiboName" type="string">org.qii.weiciyuan.debug.mention://@四次元App</item>
+</resources>

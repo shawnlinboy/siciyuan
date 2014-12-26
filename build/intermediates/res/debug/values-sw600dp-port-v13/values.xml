@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/home/linshen/siciyuan/res/values-sw600dp-port/bool.xml -->
+    <eat-comment/>
+    <bool name="has_two_panes">false</bool>
+    <!-- From: file:/home/linshen/siciyuan/res/values-sw600dp-port/dimens.xml -->
+    <eat-comment/>
+    <dimen name="browser_pic_bottom_button_layout_padding">50dp</dimen>
+    <!-- From: file:/home/linshen/siciyuan/res/values-sw600dp-port/slidingmenu_dimens.xml -->
+    <eat-comment/>
+    <dimen name="list_padding">10dp</dimen>
+    <dimen name="shadow_width">15dp</dimen>
+    <dimen name="slidingmenu_offset">350dp</dimen>
+    <integer name="num_cols">1</integer>
+</resources>

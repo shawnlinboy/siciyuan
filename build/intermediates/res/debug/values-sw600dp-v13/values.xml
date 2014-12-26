@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/home/linshen/siciyuan/res/values-sw600dp/arrays.xml -->
+    <eat-comment/>
+    <string-array name="font_value">
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+    </string-array>
+    <!-- From: file:/home/linshen/siciyuan/res/values-sw600dp/dimens.xml -->
+    <eat-comment/>
+    <dimen name="browser_msg_avatar_height">68dp</dimen>
+    <dimen name="browser_msg_avatar_width">68dp</dimen>
+    <dimen name="browser_msg_bg_padding">20dp</dimen>
+    <dimen name="emotion_bg_size">50dp</dimen>
+    <dimen name="emotion_size">30dp</dimen>
+    <dimen name="profile_avatar_height">90dp</dimen>
+    <dimen name="profile_avatar_width">90dp</dimen>
+    <dimen name="profile_bg_padding">20dp</dimen>
+    <dimen name="timeline_avatar_height">60dp</dimen>
+    <dimen name="timeline_avatar_width">60dp</dimen>
+    <dimen name="timeline_pic_high_thumbnail_height">260dp</dimen>
+    <dimen name="timeline_pic_thumbnail_height">100dp</dimen>
+    <dimen name="timeline_pic_thumbnail_width">100dp</dimen>
+    <!-- From: file:/home/linshen/siciyuan/res/values-sw600dp/numbers.xml -->
+    <eat-comment/>
+    <integer name="emotion_size">30</integer>
+</resources>

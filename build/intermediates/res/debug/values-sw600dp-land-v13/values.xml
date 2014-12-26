@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/home/linshen/siciyuan/res/values-sw600dp-land/bool.xml -->
+    <eat-comment/>
+    <bool name="has_two_panes">true</bool>
+    <!-- From: file:/home/linshen/siciyuan/res/values-sw600dp-land/dimens.xml -->
+    <eat-comment/>
+    <dimen name="browser_pic_activity_width">800dp</dimen>
+    <dimen name="browser_pic_bottom_button_layout_padding">150dp</dimen>
+    <!-- From: file:/home/linshen/siciyuan/res/values-sw600dp-land/slidingmenu_dimens.xml -->
+    <eat-comment/>
+    <dimen name="list_padding">10dp</dimen>
+    <dimen name="shadow_width">15dp</dimen>
+    <dimen name="slidingmenu_offset">700dp</dimen>
+    <!-- From: file:/home/linshen/siciyuan/res/values-sw600dp-land/dimens.xml -->
+    <eat-comment/>
+    <dimen name="toptipbar_layout_margin">20dp</dimen>
+    <!-- From: file:/home/linshen/siciyuan/res/values-sw600dp-land/slidingmenu_dimens.xml -->
+    <eat-comment/>
+    <integer name="num_cols">1</integer>
+</resources>

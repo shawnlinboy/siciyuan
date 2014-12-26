@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.qii.weiciyuan.debug"
+    android:versionCode="1"
+    android:versionName="0.1_alpha_linshen-debug" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="21" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name="org.qii.weiciyuan.support.utils.GlobalContext"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme_Light" >
+        <meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="22c3e094e4bf447e9b89eee57143c5cc5df5c641" />
+
+        <activity
+            android:name="org.qii.weiciyuan.ui.login.AccountActivity"
+            android:uiOptions="splitActionBarWhenNarrow" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- login activity -->
+
+        <activity android:name="org.qii.weiciyuan.ui.login.OAuthActivity" />
+        <activity android:name="org.qii.weiciyuan.ui.login.SSOActivity" />
+
+        <!-- main activity -->
+        <activity
+            android:name="org.qii.weiciyuan.ui.main.MainTimeLineActivity"
+            android:launchMode="singleTask" />
+
+        <!-- send activity -->
+        <activity
+            android:name="org.qii.weiciyuan.ui.send.WriteWeiboActivity"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.qii.weiciyuan.ui.send.WriteRepostActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="org.qii.weiciyuan.ui.send.WriteCommentActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="org.qii.weiciyuan.ui.send.WriteReplyToCommentActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+
+        <!-- browser activity -->
+        <activity
+            android:name="org.qii.weiciyuan.ui.browser.BrowserWeiboMsgActivity"
+            android:exported="false"
+            android:label="@string/detail"
+            android:theme="@style/AppTheme_Dummy"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name="org.qii.weiciyuan.ui.browser.BrowserCommentActivity"
+            android:label="@string/comment_detail" />
+        <activity
+            android:name="org.qii.weiciyuan.support.gallery.GalleryActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/GalleryTheme" />
+        <activity
+            android:name="org.qii.weiciyuan.support.gallery.GalleryAnimationActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            android:launchMode="singleTop"
+            android:theme="@style/GalleryTheme" />
+        <activity
+            android:name="org.qii.weiciyuan.ui.browser.BrowserWriteWeiboLocalPicActivity"
+            android:launchMode="singleTop"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name="org.qii.weiciyuan.ui.browser.BrowserWebActivity"
+            android:launchMode="singleTask"
+            android:uiOptions="splitActionBarWhenNarrow" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="e.weibo.com"
+                    android:scheme="http" />
+                <data
+                    android:host="weibo.com"
+                    android:scheme="http" />
+                <data
+                    android:host="www.weibo.com"
+                    android:scheme="http" />
+                <data
+                    android:host="www.weibo.cn"
+                    android:scheme="http" />
+                <data
+                    android:host="weibo.cn"
+                    android:scheme="http" />
+                <data
+                    android:host="t.cn"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity android:name="org.qii.weiciyuan.ui.browser.BrowserShareTimeLineActivity" />
+        <activity
+            android:name="org.qii.weiciyuan.ui.browser.AppMapActivity"
+            android:launchMode="singleTop" />
+
+        <!-- topic activity intent action refer to {@link WeiboPatterns} -->
+        <activity
+            android:name="org.qii.weiciyuan.ui.topic.SearchTopicByNameActivity"
+            android:label="@string/search_topic"
+            android:uiOptions="splitActionBarWhenNarrow" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <data android:scheme="org.qii.weiciyuan.debug.topic" />
+            </intent-filter>
+        </activity>
+        <activity android:name="org.qii.weiciyuan.ui.topic.UserTopicListActivity" />
+
+        <!-- user activity intent action refer to {@link WeiboPatterns} -->
+        <activity
+            android:name="org.qii.weiciyuan.ui.userinfo.UserInfoActivity"
+            android:theme="@style/AppTheme_Dummy" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <data android:scheme="org.qii.weiciyuan.debug.mention" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="application/org.qii.weiciyuan.beam" />
+            </intent-filter>
+        </activity>
+        <activity android:name="org.qii.weiciyuan.ui.userinfo.UserTimeLineActivity" />
+        <activity
+            android:name="org.qii.weiciyuan.ui.userinfo.MyInfoActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme_Dummy" />
+        <activity
+            android:name="org.qii.weiciyuan.ui.userinfo.EditMyProfileActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="org.qii.weiciyuan.ui.userinfo.FriendListActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="org.qii.weiciyuan.ui.userinfo.FanListActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="org.qii.weiciyuan.ui.userinfo.MyFavActivity"
+            android:launchMode="singleTop" />
+
+        <!-- search activity -->
+        <activity
+            android:name="org.qii.weiciyuan.ui.search.SearchMainActivity"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity android:name="org.qii.weiciyuan.ui.search.AtUserActivity" />
+
+        <!-- friend group -->
+        <activity android:name="org.qii.weiciyuan.ui.friendgroup.ManageGroupActivity" />
+
+        <!-- nearby -->
+        <activity android:name="org.qii.weiciyuan.ui.nearby.NearbyTimeLineActivity" />
+
+        <!-- preference activity -->
+        <activity android:name="org.qii.weiciyuan.ui.preference.SettingActivity" />
+        <!-- intent-filter is used for Android-Setting-Data usage- click this app- View app Settings -->
+        <activity android:name="org.qii.weiciyuan.ui.preference.ControlActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MANAGE_NETWORK_USAGE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="org.qii.weiciyuan.ui.preference.NotificationActivity" />
+        <activity
+            android:name="org.qii.weiciyuan.ui.preference.DraftActivity"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name="org.qii.weiciyuan.ui.preference.FilterActivity"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name="org.qii.weiciyuan.ui.preference.AppearanceActivity"
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity android:name="org.qii.weiciyuan.ui.preference.ReadActivity" />
+        <activity android:name="org.qii.weiciyuan.ui.preference.PerformanceActivity" />
+        <activity android:name="org.qii.weiciyuan.ui.preference.OtherActivity" />
+        <activity android:name="org.qii.weiciyuan.ui.preference.AboutActivity" />
+        <activity
+            android:name="org.qii.weiciyuan.ui.preference.LicenseActivity"
+            android:theme="@android:style/Theme.Holo.DialogWhenLarge" />
+
+        <!-- service -->
+        <service android:name="org.qii.weiciyuan.othercomponent.FetchNewMsgService" />
+        <service android:name="org.qii.weiciyuan.othercomponent.sendweiboservice.SendWeiboService" />
+        <service android:name="org.qii.weiciyuan.othercomponent.sendweiboservice.SendRepostService" />
+        <service android:name="org.qii.weiciyuan.othercomponent.sendweiboservice.SendCommentService" />
+        <service android:name="org.qii.weiciyuan.othercomponent.sendweiboservice.SendReplyToCommentService" />
+        <service android:name="org.qii.weiciyuan.othercomponent.unreadnotification.JBMentionsWeiboNotificationServiceHelper" />
+        <service android:name="org.qii.weiciyuan.othercomponent.unreadnotification.JBMentionsCommentNotificationServiceHelper" />
+        <service android:name="org.qii.weiciyuan.othercomponent.unreadnotification.JBCommentsToMeNotificationServiceHelper" />
+        <service android:name="org.qii.weiciyuan.othercomponent.unreadnotification.BigTextNotificationService" />
+        <service android:name="org.qii.weiciyuan.othercomponent.unreadnotification.SimpleTextNotificationService" />
+
+        <!-- -broadcast receiver -->
+        <!-- <receiver -->
+        <!-- android:exported="false" -->
+        <!-- android:name=".othercomponent.unreadnotification.UnreadMsgReceiver"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="org.qii.weiciyuan.newmsg.priority"/> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <receiver
+            android:name="org.qii.weiciyuan.othercomponent.ConnectionChangeReceiver"
+            android:label="NetworkConnection" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- provider -->
+        <provider
+            android:name="org.qii.weiciyuan.ui.search.SearchSuggestionProvider"
+            android:authorities="org.qii.weiciyuan.debug.ui.search.SearchSuggestionProvider"
+            android:exported="false" />
+
+        <!-- black magic -->
+        <activity android:name="org.qii.weiciyuan.ui.blackmagic.BlackMagicActivity" />
+
+        <!-- dm -->
+        <activity android:name="org.qii.weiciyuan.ui.dm.DMActivity" />
+        <activity android:name="org.qii.weiciyuan.ui.dm.DMUserListActivity" />
+        <activity android:name="org.qii.weiciyuan.ui.dm.DMSelectUserActivity" />
+    </application>
+
+</manifest>

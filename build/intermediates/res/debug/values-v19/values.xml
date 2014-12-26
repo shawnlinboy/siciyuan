@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/home/linshen/siciyuan/res/values-v19/theme_gallery.xml -->
+    <eat-comment/>
+    <style name="GalleryTheme" parent="@style/CommonGalleryTheme">
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+    </style>
+</resources>
